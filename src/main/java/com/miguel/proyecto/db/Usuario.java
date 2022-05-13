@@ -37,7 +37,7 @@ public class Usuario implements Serializable {
     @Basic(optional = false) @Column(nullable = false, length = 255)
     private String usuario;
     @Basic(optional = false) @Column(nullable = false, length = 255)
-    private String contraseña;
+    private String contrasenia;
     @JoinColumn(name = "persona_id", referencedColumnName = "id", nullable = false) @ManyToOne(optional = false)
     private Persona personaId;
 
@@ -48,10 +48,10 @@ public class Usuario implements Serializable {
         this.id = id;
     }
 
-    public Usuario(Long id, String usuario, String contraseña) {
+    public Usuario(Long id, String usuario, String contrasenia) {
         this.id = id;
         this.usuario = usuario;
-        this.contraseña = contraseña;
+        this.contrasenia = contrasenia;
     }
 
     public Long getId() {
@@ -70,12 +70,12 @@ public class Usuario implements Serializable {
         this.usuario = usuario;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasenia() {
+        return contrasenia;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasenia(String contrasenia) {
+        this.contrasenia = contrasenia;
     }
 
     public Persona getPersonaId() {
