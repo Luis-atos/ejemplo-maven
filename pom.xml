@@ -1,69 +1,19 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-<modelVersion>4.0.0</modelVersion>
-<groupId>com.miguel.proyecto</groupId>
-<artifactId>appweb</artifactId>
-<version>0.4.1</version>
-<build>
-<resources>
-<resource>
-<filtering>false</filtering>
-<directory>src/main/resources</directory>
-<excludes>
-<exclude>*.properties</exclude>
-<exclude>META-INF/context.xml</exclude>
-</excludes>
-</resource>
-<resource>
-<filtering>true</filtering>
-<directory>src/main/resources</directory>
-<includes>
-<include>*.properties</include>
-</includes>
-</resource>
-</resources>
-<finalName>${proyecto.jar.final_name}</finalName>
-<plugins>
-<plugin>
-<groupId>org.apache.maven.plugins</groupId>
-<artifactId>maven-compiler-plugin</artifactId>
-<version>3.1</version>
-<configuration>
-<source>${proyecto.build.jdk_version}</source>
-<target>${proyecto.build.jdk_version}</target>
-<encoding>${project.build.sourceEncoding}</encoding>
-<verbose>true</verbose>
-<fork>true</fork>
-<compilerVersion>${proyecto.build.jdk_version}</compilerVersion>
-</configuration>
-</plugin>
-<plugin>
-<artifactId>maven-assembly-plugin</artifactId>
-<configuration>
-<archive>
-<manifest>
-<mainClass>es.fega.calidad.genprops.GenFegaProps</mainClass>
-</manifest>
-</archive>
-<descriptorRefs>
-<descriptorRef>jar-with-dependencies</descriptorRef>
-</descriptorRefs>
-</configuration>
-<executions>
-<execution>
-<id>make-assembly</id>
-<phase>package</phase>
-<goals>
-<goal>single</goal>
-</goals>
-</execution>
-</executions>
-</plugin>
-</plugins>
-</build>
-<dependencies>
-<dependency>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.miguel.proyecto</groupId>
+  <artifactId>Appweb</artifactId>
+  <packaging>war</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>Appweb</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <jdk-version>1.8</jdk-version>
+  </properties>
+
+  <dependencies>
+     
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
@@ -121,30 +71,85 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
       <scope>compile</scope>
     </dependency>
   </dependencies>
-<properties>
-<!-- Propiedades del proyecto -->
-<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-<proyecto.build.jdk_version>1.8</proyecto.build.jdk_version>
-
-<!-- Propiedades del application-context -->
-<proyecto.jar.final_name>${project.artifactId}</proyecto.jar.final_name>
-</properties>
-<profiles>
-<profile>
-<id>DES</id>
-<properties>
-</properties>
-</profile>
-<profile>
-<id>PRE</id>
-<properties>
-</properties>
-</profile>
-<profile>
-<id>PRO</id>
-<properties>
-</properties>
-</profile>
-</profiles>
+  <build>
+    <finalName>Appweb</finalName>
+    <plugins>
+      <plugin>
+         <groupId>org.apache.maven.plugins</groupId>
+         <artifactId>maven-compiler-plugin</artifactId>
+         <version>3.1</version>
+         <configuration>
+         <source>${proyecto.build.jdk_version}</source>
+         <target>${proyecto.build.jdk_version}</target>
+         <encoding>${project.build.sourceEncoding}</encoding>
+         <verbose>true</verbose>
+         <fork>true</fork>
+         <compilerVersion>${proyecto.build.jdk_version}</compilerVersion>
+         </configuration>
+       </plugin>
+       <plugin>
+         <artifactId>maven-assembly-plugin</artifactId>
+         <configuration>
+         <archive>
+         <manifest>
+         <mainClass>es.fega.calidad.genprops.GenFegaProps</mainClass>
+         </manifest>
+         </archive>
+         <descriptorRefs>
+         <descriptorRef>jar-with-dependencies</descriptorRef>
+         </descriptorRefs>
+         </configuration>
+         <executions>
+         <execution>
+         <id>make-assembly</id>
+         <phase>package</phase>
+         <goals>
+         <goal>single</goal>
+         </goals>
+         </execution>
+         </executions>
+       </plugin>
+      <!-- Set JDK Compiler Level -->
+   <!--   
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.3.2</version>
+        <configuration>
+          <source>${jdk-version}</source>
+          <target>${jdk-version}</target>
+        </configuration>
+      </plugin>
+  -->
+  <!--   
+     <plugin>
+         <groupId>org.apache.maven.plugins</groupId>
+         <artifactId>maven-war-plugin</artifactId>
+         <version>2.4</version>
+         <configuration>
+            <webResources>
+               <resource>
+                   <!-- this is relative to the pom.xml directory -->
+                   <directory>target</directory>
+               </resource>
+            </webResources>
+         </configuration>
+       </plugin>
+-->
+      <!-- For Maven Tomcat Plugin -->
+      <!--
+      <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+                 <url>http://localhost:8085/manager/text</url>
+                 <server>TomcatServer</server>
+                 <username>luisatos</username>
+                 <password>luisatos</password>
+        </configuration>
+      </plugin>
+      -->
+    </plugins>
+  </build>
 </project>
