@@ -35,11 +35,11 @@ public class MiServlet extends HttpServlet {
         pw.println("<H2>Leyendo parámetros desde un formulario html</H2><P>");
         pw.println("<UL>\n");
 
-        for (Persona p : lp) {
-            pw.println(String.format("<b>Nombre:</b> %s <br/> <b>Apellido:</b> %s <br/> <b> Apellido 2:</b> %s <br/>"
-                                     , p.getNombre(), p.getApellido1(), p.getApellido2()));
-            pw.println("<hr/>");
-        }
+      //  for (Persona p : lp) {
+      //      pw.println(String.format("<b>Nombre:</b> %s <br/> <b>Apellido:</b> %s <br/> <b> Apellido 2:</b> %s <br/>"
+      //                               , p.getNombre(), p.getApellido1(), p.getApellido2()));
+       //     pw.println("<hr/>");
+      //  }
         pw.println("</BODY></HTML>");
         pw.close();
     }
