@@ -102,7 +102,13 @@
        </plugin>
 -->
       <!-- For Maven Tomcat Plugin -->
-     
+     <plugin>
+         <artifactId>maven-clean-plugin</artifactId>
+         <version>2.4.1</version>
+         <configuration>
+           <failOnError>false</failOnError>
+         </configuration>
+      </plugin>
       <plugin>
         <groupId>org.apache.tomcat.maven</groupId>
         <artifactId>tomcat7-maven-plugin</artifactId>
