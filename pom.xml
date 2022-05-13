@@ -92,7 +92,7 @@
             <webResources>
                <resource>
                    <!-- this is relative to the pom.xml directory -->
-                   <directory>src/main/resources/My-Web-Project/web</directory>
+                   <directory>/target</directory>
                </resource>
             </webResources>
          </configuration>
