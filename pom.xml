@@ -103,7 +103,7 @@
        </plugin>
 
       <!-- For Maven Tomcat Plugin -->
-    
+     <!--
       <plugin>
         <groupId>org.apache.tomcat.maven</groupId>
         <artifactId>tomcat7-maven-plugin</artifactId>
@@ -115,7 +115,7 @@
                  <password>luisatos</password>
         </configuration>
       </plugin>
-     
+    --> 
     </plugins>
   </build>
 </project>
