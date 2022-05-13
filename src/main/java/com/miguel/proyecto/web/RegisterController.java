@@ -30,7 +30,7 @@ private Usuario user = new Usuario();
     }
 
     public String addUser() {
-        if (!user.getContraseña().equals(user.getConfirmacionContraseña())) {
+        if (!user.getContrasenia().equals(user.getConfirmacionContrasenia())) {
             FacesContext.getCurrentInstance().addMessage(null
                                                          , new FacesMessage(FacesMessage.SEVERITY_ERROR, "Fallo de registro: Las contraseñas deben coincidir", ""));
         } else {
