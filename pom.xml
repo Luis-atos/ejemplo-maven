@@ -74,43 +74,10 @@
   <build>
     <finalName>Appweb</finalName>
     <plugins>
-      <plugin>
-         <groupId>org.apache.maven.plugins</groupId>
-         <artifactId>maven-compiler-plugin</artifactId>
-         <version>3.1</version>
-         <configuration>
-         <source>${proyecto.build.jdk_version}</source>
-         <target>${proyecto.build.jdk_version}</target>
-         <encoding>${project.build.sourceEncoding}</encoding>
-         <verbose>true</verbose>
-         <fork>true</fork>
-         <compilerVersion>${proyecto.build.jdk_version}</compilerVersion>
-         </configuration>
-       </plugin>
-       <plugin>
-         <artifactId>maven-assembly-plugin</artifactId>
-         <configuration>
-         <archive>
-         <manifest>
-         <mainClass>es.fega.calidad.genprops.GenFegaProps</mainClass>
-         </manifest>
-         </archive>
-         <descriptorRefs>
-         <descriptorRef>jar-with-dependencies</descriptorRef>
-         </descriptorRefs>
-         </configuration>
-         <executions>
-         <execution>
-         <id>make-assembly</id>
-         <phase>package</phase>
-         <goals>
-         <goal>single</goal>
-         </goals>
-         </execution>
-         </executions>
-       </plugin>
+      
+      
       <!-- Set JDK Compiler Level -->
-   <!--   
+   
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -120,8 +87,7 @@
           <target>${jdk-version}</target>
         </configuration>
       </plugin>
-  -->
-  <!--   
+ 
      <plugin>
          <groupId>org.apache.maven.plugins</groupId>
          <artifactId>maven-war-plugin</artifactId>
@@ -135,9 +101,9 @@
             </webResources>
          </configuration>
        </plugin>
--->
+
       <!-- For Maven Tomcat Plugin -->
-      <!--
+    
       <plugin>
         <groupId>org.apache.tomcat.maven</groupId>
         <artifactId>tomcat7-maven-plugin</artifactId>
@@ -149,7 +115,7 @@
                  <password>luisatos</password>
         </configuration>
       </plugin>
-      -->
+     
     </plugins>
   </build>
 </project>
