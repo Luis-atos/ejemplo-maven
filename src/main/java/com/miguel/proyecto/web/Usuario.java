@@ -3,8 +3,8 @@ package com.miguel.proyecto.web;
 public class Usuario {
 
     private String usuario;
-    private String contraseña;
-    private String confirmacionContraseña;
+    private String contrasenia;
+    private String confirmacionContrasenia;
 
     public String getUsuario() {
         return usuario;
@@ -14,20 +14,20 @@ public class Usuario {
         this.usuario = usuario;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasenia() {
+        return contrasenia;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasenia(String contrasenia) {
+        this.contrasenia = contrasenia;
     }
 
-    public String getConfirmacionContraseña() {
-        return confirmacionContraseña;
+    public String getConfirmacionContrasenia() {
+        return confirmacionContrasenia;
     }
 
-    public void setConfirmacionContraseña(String confirmacionContraseña) {
-        this.confirmacionContraseña = confirmacionContraseña;
+    public void setConfirmacionContrasenia(String confirmacionContrasenia) {
+        this.confirmacionContrasenia = confirmacionContrasenia;
     }
 
 }
